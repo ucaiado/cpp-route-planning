@@ -1,6 +1,3 @@
-[submodule "P0267_RefImpl"]
-	path = P0267_RefImpl
-	url = git@github.com:cpp-io2d/P0267_RefImpl.git
 [submodule "CppND-Route-Planning-Project"]
 	path = CppND-Route-Planning-Project
 	url = git@github.com:udacity/CppND-Route-Planning-Project.git
