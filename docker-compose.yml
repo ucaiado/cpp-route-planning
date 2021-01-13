@@ -8,7 +8,9 @@ services:
       - "8888:8888"
     volumes:
       - ./CppND-Route-Planning-Project:/CppND-Route-Planning-Project
+      - ./scripts/build-project.sh:/build-project.sh
     command: >
       bash -c "
+      chmod +x /build-project.sh &&
       /build-project.sh
       "

@@ -13,8 +13,9 @@ WORKDIR /cmake-3.14.3
 RUN ./bootstrap && make && make install
 WORKDIR /
 COPY P0267_RefImpl /P0267_RefImpl
+RUN mkdir -p /CppND-Route-Planning-Project
 WORKDIR /P0267_RefImpl/Debug
 RUN cmake --config Debug "-DCMAKE_BUILD_TYPE=Debug" .. && cmake --build . && make && make install
-WORKDIR /
+RUN mkdir -p /scripts
 COPY ./scripts/build-project.sh /build-project.sh
 RUN chmod +x /build-project.sh

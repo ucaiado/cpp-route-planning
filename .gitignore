@@ -32,5 +32,6 @@
 *.app
 
 # sumodules
-CppND-Route-Planning-Project
+CppND-Route-Planning-Project/build
 P0267_RefImpl
+CppND-Route-Planning-Project/build
