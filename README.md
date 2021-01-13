@@ -11,6 +11,7 @@ To set up your environment to run the code in this repository, start by setting
  following commands.
 
 ```shell
+$ ./scripts/setup-env.sh
 $ docker build
 $ docker up
 ```
@@ -21,8 +22,8 @@ $ docker up
 
 
 ### Reference
-1. [route-docker](https://github.com/MrD504/cpp-route-docker)
-2. ...
+1. [Route Planning Project Docker image](https://github.com/MrD504/cpp-route-docker)
+2. [How to show X11 windows with Docker on Mac](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb)
 
 
 ### License
