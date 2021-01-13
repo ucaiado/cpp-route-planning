@@ -1,0 +1,14 @@
+version: '3'
+services:
+  cpp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./CppND-Route-Planning-Project:/CppND-Route-Planning-Project
+    command: >
+      bash -c "
+      /build-project.sh
+      "
