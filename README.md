@@ -27,15 +27,13 @@ $ make basic
 ### Run
 In a terminal or command window, navigate to the top-level project directory
  `cpp-route-planning/` (that contains this README) and run the following
- commands:
+ commands. This will run the project tests and then run the final code, opening
+ a map with a path filled.
 
 ```shell
 $ make test
 $ make up
 ```
-
-This will run the project tests and then run the final code, opening a map
- with a path filled.
 
 
 ### License
