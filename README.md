@@ -15,9 +15,9 @@ This project is part of the [C++ Nanodegree](https://www.udacity.com/course/c-pl
 To set up your environment to run the code in this repository, start by cloning
  this project using the `--recurse-submodules` flag. Afterward, install Docker
  in your machine and the appropriate Xserver. Then, start both and configure
- Xserver as explained [here]((https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb).
+ Xserver as explained [here](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb).
  You may need to restart your computer. Finally, run the following commands. You
- should see a blank map like the one in the last session.
+ should see a blank map.
 ```shell
 $ make docker-build
 $ make basic
