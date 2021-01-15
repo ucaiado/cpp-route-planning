@@ -4,21 +4,21 @@ docker-build:
 	-f dcomposes/docker-compose.yml \
 	build
 
-basic:
+blank-map:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-route-planning \
 	-f dcomposes/docker-compose.basic.yml \
 	up
 
-up:
+route:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-route-planning \
 	-f dcomposes/docker-compose.yml \
 	up
 
-test:
+tests:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-route-planning \

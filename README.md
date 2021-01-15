@@ -20,7 +20,7 @@ To set up your environment to run the code in this repository, start by cloning
  should see a blank map.
 ```shell
 $ make docker-build
-$ make basic
+$ make blank-map
 ```
 
 
@@ -31,8 +31,8 @@ In a terminal or command window, navigate to the top-level project directory
  a map with a path filled.
 
 ```shell
-$ make test
-$ make up
+$ make tests
+$ make route
 ```
 
 
