@@ -9,7 +9,7 @@ services:
       - "8080:8080"
     volumes:
       - ../CppND-Route-Planning-Project:/CppND-Route-Planning-Project
-      - ../src:/CppND-Route-Planning-Project/src
+      - ../route_model:/CppND-Route-Planning-Project/src
       - ../scripts/build-project.sh:/build-project.sh
     environment:
         - DISPLAY=docker.for.mac.host.internal:0
