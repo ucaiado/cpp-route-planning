@@ -60,7 +60,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
  */
 bool Compare(const RouteModel::Node *a, const RouteModel::Node *b) {
   float f1 = a->g_value + a->h_value; // f1 = g1 + h1
-  int f2 = b->g_value + b->h_value; // f2 = g2 + h2
+  float f2 = b->g_value + b->h_value; // f2 = g2 + h2
   return f1 > f2;
 }
 
@@ -121,5 +121,22 @@ void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
 
     // TODO: Implement your solution here.
+
+    // Include the starting node to the open_list
+    start_node->visited=true;
+    open_list.push_back(start_node);
+
+    while (open_list.size() > 0) {
+        // sort the open_list and get the next node
+        auto current_node = NextNode();
+        // Check if we're reached the end_node
+        float dist = current_node->distance(*end_node);
+        if (current_node->distance(*end_node) == 0){
+            m_Model.path = ConstructFinalPath(current_node);
+            break;
+        }
+        // If we're not done, expand search to current node's neighbors
+        AddNeighbors(current_node);
+    }
 
 }
