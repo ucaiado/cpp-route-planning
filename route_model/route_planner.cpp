@@ -55,8 +55,20 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 // - Remove that node from the open_list.
 // - Return the pointer.
 
-RouteModel::Node *RoutePlanner::NextNode() {
+/**
+ * Compare the F values of two nodes.
+ */
+bool Compare(const RouteModel::Node *a, const RouteModel::Node *b) {
+  float f1 = a->g_value + a->h_value; // f1 = g1 + h1
+  int f2 = b->g_value + b->h_value; // f2 = g2 + h2
+  return f1 > f2;
+}
 
+RouteModel::Node *RoutePlanner::NextNode() {
+    std::sort(open_list.begin(), open_list.end(), Compare);
+    auto next_node = open_list.back();
+    open_list.pop_back();
+    return next_node;
 }
 
 
