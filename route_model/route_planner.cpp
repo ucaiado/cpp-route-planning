@@ -87,7 +87,24 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
     // TODO: Implement your solution here.
 
-    distance *= m_Model.MetricScale(); // Multiply the distance by the scale of the map to get meters.
+    // follow the chain of parents of nodes until the starting node is found (initialized with
+    //  parent == nullptr in the route_model header)
+    while (current_node->parent != nullptr){
+        path_found.push_back(*current_node);
+        // For each node in the chain, add the distance from the node to its parent to the distance
+        //   variable
+        distance += current_node->distance(*current_node->parent);
+        current_node = current_node->parent;
+    }
+    // include the starting node to the list (which was not included in the while above)
+    path_found.push_back(*current_node);
+
+    // path_found the order of the returned vector
+    // source: https://stackoverflow.com/questions/8877448/how-do-i-reverse-a-c-vector
+    std::reverse(path_found.begin(), path_found.end());
+
+    // Multiply the distance by the scale of the map to get meters.
+    distance *= m_Model.MetricScale();
     return path_found;
 
 }
